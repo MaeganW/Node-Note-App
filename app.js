@@ -8,4 +8,4 @@ const user = os.userInfo();
 console.log(user);
 console.log(module);
 
-fs.appendFile('hello.txt', `Hello ${user.username}! You are ${notes.age}`);
+fs.appendFile('hello.txt', `Hello ${user.username}! You are ${notes.age}. ${notes.addNote()}`);
