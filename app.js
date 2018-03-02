@@ -1,5 +1,9 @@
-console.log('start');
+console.log('running app.js');
 
 const fs = require('fs');
+const os = require('os');
 
-fs.appendFile('hello.txt', 'Hello World');
+const user = os.userInfo();
+console.log(user);
+
+fs.appendFile('hello.txt', `Hello ${user.username}!`);
