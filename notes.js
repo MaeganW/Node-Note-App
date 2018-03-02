@@ -1,3 +1,3 @@
 console.log('running notes.js');
 
-console.log(module);
+module.exports.age = 26;
