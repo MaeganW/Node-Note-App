@@ -8,4 +8,17 @@ module.exports.addNote = () => {
 module.exports.sum = (a,b) => a + b;
 
 //variables typed into the console
-console.log(process.argv);
+var command = process.argv[2];
+// console.log(process.argv);
+// console.log('process argv: ', command);
+
+let msg = '';
+if (command === 'add') {
+  msg = 'Adding a note';
+} else if (command === 'delete') {
+  msg = 'Deleting a note';
+} else {
+  msg = 'Command not recognized';
+}
+
+console.log('Note Taker Says: ', msg);
