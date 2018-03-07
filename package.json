@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MaeganW/Node-Note-App/issues"
   },
-  "homepage": "https://github.com/MaeganW/Node-Note-App#readme"
+  "homepage": "https://github.com/MaeganW/Node-Note-App#readme",
+  "dependencies": {
+    "yargs": "^4.7.1"
+  }
 }
