@@ -33,8 +33,8 @@ switch(command) {
     msg = isNoteRemoved ? 'Note was removed' : 'Note not found';
     break;
   case 'read':
-    msg = 'Reading a note';
-    notes.readNote(yargsArgv.title);
+    const readNote = notes.readNote(yargsArgv.title);
+    msg = (readNote.length === 0) ? 'Note not found' : readNote[0].body;
     break;
   case 'list':
     msg = 'Listing all notes';

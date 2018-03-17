@@ -51,7 +51,9 @@ const removeNote = (title) => {
 };
 
 const readNote = (title) => {
-  console.log('reading a note: ', title);
+  const notes = fetchNotes();
+  const filteredNotes = notes.filter(note => note.title === title);
+  return filteredNotes;
 };
 
 module.exports = {
