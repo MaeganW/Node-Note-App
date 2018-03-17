@@ -21,8 +21,12 @@ let msg = '';
 
 switch(command) {
   case 'add':
-    msg = 'Adding a note';
-    notes.addNote(yargsArgv.title, yargsArgv.body);
+    const note = notes.addNote(yargsArgv.title, yargsArgv.body);
+    if (note) {
+      msg = `Added note with title "${note.title}" and body "${note.body}"`;
+    } else {
+      msg = "Adding note errored";
+    }
     break;
   case 'delete':
     msg = 'Deleting a note';
