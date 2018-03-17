@@ -10,27 +10,14 @@ const yargs = require('yargs');
 // console.log(notes.sum(12,21))
 // fs.appendFile('hello.txt', `Hello ${user.username}! You are ${notes.age}. ${notes.addNote()}`);
 
-
-
 //variables typed into the console
 const yargsArgv = yargs.argv;
-const command = process.argv[2];
+const command = yargsArgv._[0];
 console.log('Command: ', command);
 console.log('Process: ', process.argv);
 console.log('Yargs Arguments: ', yargsArgv);
 
 let msg = '';
-// if (command === 'add') {
-//   msg = 'Adding a note';
-// } else if (command === 'delete') {
-//   msg = 'Deleting a note';
-// } else if (command === 'read') {
-//   msg = 'Reading a note';
-// } else if (command === 'list') {
-//   msg = 'Listing all notes';
-// } else {
-//   msg = 'Command not recognized';
-// }
 
 switch(command) {
   case 'add':
