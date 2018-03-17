@@ -29,8 +29,8 @@ switch(command) {
     }
     break;
   case 'delete':
-    msg = 'Deleting a note';
-    notes.removeNote(yargsArgv.title);
+    const isNoteRemoved = notes.removeNote(yargsArgv.title);
+    msg = isNoteRemoved ? 'Note was removed' : 'Note not found';
     break;
   case 'read':
     msg = 'Reading a note';

@@ -43,7 +43,11 @@ const getAll = () => {
 };
 
 const removeNote = (title) => {
-  console.log('removing a note: ', title);
+  const notes = fetchNotes();
+  const newNotes = notes.filter(note => note.title !== title);
+  fs.writeFileSync('notes-data.json', JSON.stringify(newNotes));
+
+  return notes.length !== newNotes.length;
 };
 
 const readNote = (title) => {
