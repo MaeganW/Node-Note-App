@@ -39,12 +39,15 @@ switch(command) {
     break;
   case 'delete':
     msg = 'Deleting a note';
+    notes.removeNote(yargsArgv.title);
     break;
   case 'read':
     msg = 'Reading a note';
+    notes.readNote(yargsArgv.title);
     break;
   case 'list':
     msg = 'Listing all notes';
+    notes.getAll();
     break;
   default:
     msg = 'Command not recognized';
