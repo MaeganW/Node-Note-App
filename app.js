@@ -37,8 +37,9 @@ switch(command) {
     msg = (readNote.length === 0) ? 'Note not found' : readNote[0].body;
     break;
   case 'list':
-    msg = 'Listing all notes';
-    notes.getAll();
+    const allNotes = notes.getAll();
+    msg = `Listing ${allNotes.length} note(s)`;
+    allNotes.forEach(note => console.log(`${note.title}: ${note.body}`));
     break;
   default:
     msg = 'Command not recognized';
