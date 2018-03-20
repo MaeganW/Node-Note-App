@@ -11,11 +11,25 @@ const yargs = require('yargs');
 // fs.appendFile('hello.txt', `Hello ${user.username}! You are ${notes.age}. ${notes.addNote()}`);
 
 //variables typed into the console
-const yargsArgv = yargs.argv;
+const yargsArgv = yargs
+  .command('add', 'This command adds a new note', {
+    title: {
+      describe: 'Title of the note',
+      demand: true,
+      alias: 't'
+    },
+    body: {
+      describe: 'Body of the note',
+      demand: true,
+      alias: 'b'
+    }
+  })
+  .help()
+  .argv;
 const command = yargsArgv._[0];
-console.log('Command: ', command);
-console.log('Process: ', process.argv);
-console.log('Yargs Arguments: ', yargsArgv);
+// console.log('Command: ', command);
+// console.log('Process: ', process.argv);
+// console.log('Yargs Arguments: ', yargsArgv);
 
 let msg = '';
 
