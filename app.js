@@ -10,19 +10,29 @@ const yargs = require('yargs');
 // console.log(notes.sum(12,21))
 // fs.appendFile('hello.txt', `Hello ${user.username}! You are ${notes.age}. ${notes.addNote()}`);
 
-//variables typed into the console
+const cmdOptions = {
+  title: {
+    describe: 'Title of the note',
+    demand: true,
+    alias: 't'
+  },
+  body: {
+    describe: 'Body of the note',
+    demand: true,
+    alias: 'b'
+  }
+}
 const yargsArgv = yargs
   .command('add', 'This command adds a new note', {
-    title: {
-      describe: 'Title of the note',
-      demand: true,
-      alias: 't'
-    },
-    body: {
-      describe: 'Body of the note',
-      demand: true,
-      alias: 'b'
-    }
+    title: cmdOptions.title,
+    body: cmdOptions.body
+  })
+  .command('list', 'This command lists all notes')
+  .command('read', 'Read a note with the matching title', {
+    title: cmdOptions.title
+  })
+  .command('delete', 'This command removes the indicated note', {
+    title: cmdOptions.title
   })
   .help()
   .argv;
